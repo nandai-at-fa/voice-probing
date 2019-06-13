@@ -52,6 +52,13 @@ def processRequest(req):
     horizontal = req.get("queryResult").get("parameters").get("horizontal")
     depth = req.get("queryResult").get("parameters").get("depth")
 
+    #デバッグ用にログ出力
+    print(jaw)
+    print(tooth_number)
+    print(virtical)
+    print(horizontal)
+    print(depth)
+
     #ダウンロードしたjsonファイルを同じフォルダに格納して指定する
     credentials = ServiceAccountCredentials.from_json_keyfile_name('probing-test-project-2049bc1f32a8.json', scope)
     gc = gspread.authorize(credentials)
