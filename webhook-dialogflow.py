@@ -67,7 +67,7 @@ def processRequest(req):
 
     # シートに行を追加して記入
     #worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),pee,poo,pooStatus]);
-    worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),jaw,tooth_number,horizontal,virtical,depth])
+    worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),jaw,tooth_number,horizontal,virtical,depth]);
 
 
 if __name__ == '__main__':
