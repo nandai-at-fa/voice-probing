@@ -45,8 +45,8 @@ def webhook():
     return "SUCCESS"
 
 def processRequest(req):
-    if req.get("result").get("action") != "writeSpreadSheet":
-        return {}
+    #if req.get("result").get("action") != "writeSpreadSheet":
+    #    return {}
 
     #jaw = req.get("queryResult").get("parameters").get("jaw")
     #tooth_number = req.get("queryResult").get("parameters").get("tooth_number")
@@ -55,8 +55,8 @@ def processRequest(req):
     #depth = req.get("queryResult").get("parameters").get("depth")
 
     #ダウンロードしたjsonファイルを同じフォルダに格納して指定する
-    credentials = ServiceAccountCredentials.from_json_keyfile_name('probing-test-project-2049bc1f32a8.json', scope)
-    gc = gspread.authorize(credentials)
+    #credentials = ServiceAccountCredentials.from_json_keyfile_name('probing-test-project-2049bc1f32a8.json', scope)
+    #gc = gspread.authorize(credentials)
     # 共有設定したスプレッドシートの名前を指定する
     #worksheet = gc.open("JSON_test").sheet1
 
