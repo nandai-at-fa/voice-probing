@@ -45,8 +45,8 @@ def webhook():
     return "SUCCESS"
 
 def processRequest(req):
-    if req.get("result").get("action") != "writeSpreadSheet":
-        return {}
+    #if req.get("result").get("action") != "writeSpreadSheet":
+    #    return {}
 
     jaw = req.get("queryResult").get("parameters").get("jaw")
     tooth_number = req.get("queryResult").get("parameters").get("tooth_number")
