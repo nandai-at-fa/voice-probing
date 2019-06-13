@@ -23,7 +23,8 @@ import gspread
 
 #OAuth 2.0で保護されたリソースにアクセスするためのライブラリ
 from oauth2client.service_account import ServiceAccountCredentials
-scope = ['https://spreadsheets.google.com/feeds']
+#scope = ['https://spreadsheets.google.com/feeds']
+scope = ['https://www.googleapis.com/auth/spreadsheets','https://www.googleapis.com/auth/drive']
 
 #現在日時のdatetimeオブジェクトを取得するためのライブラリ
 from datetime import datetime
