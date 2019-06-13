@@ -8,6 +8,7 @@ dj-database-url==0.5.0
 django>=1.11.21
 django-heroku==0.3.1
 Flask==1.0.2
+gunicorn>=19.8.1
 gspread==3.0.1
 httplib2==0.11.3
 idna==2.7
