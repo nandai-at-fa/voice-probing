@@ -49,11 +49,11 @@ def processRequest(req):
     #if req.get("result").get("action") != "writeSpreadSheet":
     #    return {}
 
-    jaw = req.get("queryResult").get("parameters").get("jaw")
-    tooth_number = req.get("queryResult").get("parameters").get("tooth_number")
-    virtical = req.get("queryResult").get("parameters").get("virtical")
-    horizontal = req.get("queryResult").get("parameters").get("horizontal")
-    depth = req.get("queryResult").get("parameters").get("depth")
+    jaw = req.get("queryResult").get("parameters").get("jaw")[0]
+    tooth_number = req.get("queryResult").get("parameters").get("tooth_number")[0]
+    virtical = req.get("queryResult").get("parameters").get("virtical")[0]
+    horizontal = req.get("queryResult").get("parameters").get("horizontal")[0]
+    depth = req.get("queryResult").get("parameters").get("depth")[0]
 
     #ダウンロードしたjsonファイルを同じフォルダに格納して指定する
     credentials = ServiceAccountCredentials.from_json_keyfile_name('probing-test-project-2049bc1f32a8.json', scope)
@@ -68,7 +68,7 @@ def processRequest(req):
     # シートに行を追加して記入
     #worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),pee,poo,pooStatus]);
     print(jaw)
-    worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),jaw[0],tooth_number[0],horizontal[0],virtical[0],depth[0]])
+    worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),jaw,tooth_number,horizontal,virtical,depth])
 
 
 if __name__ == '__main__':
