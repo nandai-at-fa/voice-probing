@@ -26,8 +26,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 #scope = ['https://spreadsheets.google.com/feeds']
 #scope = ['https://www.googleapis.com/auth/spreadsheets','https://www.googleapis.com/auth/drive']
-scope = ['https://spreadsheets.google.com/feeds',
-         'https://www.googleapis.com/auth/drive']
+scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
 
 # 辞書オブジェクト。認証に必要な情報をHerokuの環境変数から呼び出している
 credential = {
