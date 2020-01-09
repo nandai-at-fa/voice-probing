@@ -63,14 +63,14 @@ def webhook():
     return "SUCCESS"
 
 def processRequest(req):
-    jaw = req.get("queryResult").get("parameters").get("jaw")
+    #jaw = req.get("queryResult").get("parameters").get("jaw")
     tooth_number = req.get("queryResult").get("parameters").get("tooth_number")
     virtical = req.get("queryResult").get("parameters").get("virtical")
     horizontal = req.get("queryResult").get("parameters").get("horizontal")
     depth = req.get("queryResult").get("parameters").get("depth")
 
     #デバッグ用にログ出力
-    print(jaw)
+    #print(jaw)
     print(tooth_number)
     print(virtical)
     print(horizontal)
@@ -88,7 +88,8 @@ def processRequest(req):
     jst_now = utc_now.astimezone(timezone('Asia/Tokyo'))
 
     # シートに行を追加して記入
-    worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),jaw[0],tooth_number[0],horizontal[0],virtical[0],depth[0]]);
+    #worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),jaw[0],tooth_number[0],horizontal[0],virtical[0],depth[0]]);
+    worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],horizontal[0],virtical[0],depth[0]]);
 
 
 if __name__ == '__main__':
