@@ -59,8 +59,12 @@ def webhook():
     print(json.dumps(req, indent=4))
 
     res = processRequest(req)
+
     # return返さないとエラーになる
-    return "SUCCESS"
+    #return "SUCCESS"
+
+    # make_responceで書いてみる
+    return make_response(jsonify({'success'}))
 
 def processRequest(req):
     #jaw = req.get("queryResult").get("parameters").get("jaw")
@@ -90,10 +94,6 @@ def processRequest(req):
     # シートに行を追加して記入
     #worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),jaw[0],tooth_number[0],horizontal[0],virtical[0],depth[0]]);
     worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],horizontal[0],virtical[0],depth[0]]);
-
-    # return返さないとエラーになる
-    return "SUCCESS"
-
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
