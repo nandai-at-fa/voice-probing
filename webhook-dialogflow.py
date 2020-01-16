@@ -64,7 +64,7 @@ def webhook():
     #return "SUCCESS"
 
     # make_responceで書いてみる
-    return make_response(jsonify({'success'}))
+    return make_response(jsonify({"speech":"入力しました"}))
 
 def processRequest(req):
     #jaw = req.get("queryResult").get("parameters").get("jaw")
