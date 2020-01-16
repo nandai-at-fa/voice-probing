@@ -91,6 +91,9 @@ def processRequest(req):
     #worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),jaw[0],tooth_number[0],horizontal[0],virtical[0],depth[0]]);
     worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],horizontal[0],virtical[0],depth[0]]);
 
+    # return返さないとエラーになる
+    return "SUCCESS"
+
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
