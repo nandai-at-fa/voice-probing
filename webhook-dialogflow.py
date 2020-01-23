@@ -21,6 +21,10 @@ from flask import make_response
 #googleSpreadsheet用のライブラリ
 import gspread
 
+#Webhookのレスポンスを試作
+import collections
+from django.http.response import JsonResponse
+
 #OAuth 2.0で保護されたリソースにアクセスするためのライブラリ
 from oauth2client.service_account import ServiceAccountCredentials
 
@@ -63,8 +67,11 @@ def webhook():
     # return返さないとエラーになる
     #return "SUCCESS"
 
-    # make_responceで書いてみる
-    return make_response(jsonify({"speech":"入力しました"}))
+    # response
+    fulfillment_text = '入力しました'
+    data = collections.OrderedDict()
+    data['fulfillmentText'] = fulfillment_text
+    return JsonResponse(data)
 
 def processRequest(req):
     #jaw = req.get("queryResult").get("parameters").get("jaw")
