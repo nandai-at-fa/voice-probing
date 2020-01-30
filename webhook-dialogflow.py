@@ -101,7 +101,7 @@ def processRequest(req):
         worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],horizontal[0],virtical[0],depth[0]]);
 
     if not len( depth_val2[0] ) == 0:
-        #存在しないときは何もしない
+        pass
     else:
         worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],virtical[0],depth_val2[0]]);
 
