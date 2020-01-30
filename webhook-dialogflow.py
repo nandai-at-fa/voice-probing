@@ -100,9 +100,11 @@ def processRequest(req):
     if depth is None:
         worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number,virtical,depth_val]);
         worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number,virtical,depth_val1]);
-        if len( depth_val2 ) != 0:
-            print(depth_val2)
-            worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number,virtical,depth_val2]);
+
+    if depth is None and len( depth_val2 ) != 0:
+        print(depth_val2)
+        worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number,virtical,depth_val2]);
+
     else:
         worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],horizontal[0],virtical[0],depth[0]]);
 
