@@ -81,6 +81,9 @@ def processRequest(req):
     print(virtical)
     print(horizontal)
     print(depth)
+    print(depth_val)
+    print(depth_val1)
+    print(depth_val2)
 
     #ダウンロードしたjsonファイルを同じフォルダに格納して指定する
     credentials = ServiceAccountCredentials.from_json_keyfile_dict(credential, scope)
@@ -94,13 +97,13 @@ def processRequest(req):
     jst_now = utc_now.astimezone(timezone('Asia/Tokyo'))
 
     # シートに行を追加して記入
-    if not len( depth[0] ) == 0:
+    if not depth[0]:
         worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],virtical[0],depth_val[0]]);
         worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],virtical[0],depth_val1[0]]);
     else:
         worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],horizontal[0],virtical[0],depth[0]]);
 
-    if not len( depth_val2[0] ) == 0:
+    if not depth_val2[0]:
         pass
     else:
         worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],virtical[0],depth_val2[0]]);
