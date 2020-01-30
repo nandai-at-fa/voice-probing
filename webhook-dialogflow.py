@@ -68,14 +68,15 @@ def webhook():
     return "SUCCESS"
 
 def processRequest(req):
-    #jaw = req.get("queryResult").get("parameters").get("jaw")
     tooth_number = req.get("queryResult").get("parameters").get("tooth_number")
     virtical = req.get("queryResult").get("parameters").get("virtical")
     horizontal = req.get("queryResult").get("parameters").get("horizontal")
     depth = req.get("queryResult").get("parameters").get("depth")
+    depth_val = req.get("queryResult").get("parameters").get("depth_val")
+    depth_val1 = req.get("queryResult").get("parameters").get("depth_val1")
+    depth_val2 = req.get("queryResult").get("parameters").get("depth_val2")
 
     #デバッグ用にログ出力
-    #print(jaw)
     print(tooth_number)
     print(virtical)
     print(horizontal)
@@ -93,8 +94,15 @@ def processRequest(req):
     jst_now = utc_now.astimezone(timezone('Asia/Tokyo'))
 
     # シートに行を追加して記入
-    #worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),jaw[0],tooth_number[0],horizontal[0],virtical[0],depth[0]]);
-    worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],horizontal[0],virtical[0],depth[0]]);
+    if not depth
+        worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],virtical[0],depth_val[0]]);
+        worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],virtical[0],depth_val1[0]]);
+    else
+        worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],horizontal[0],virtical[0],depth[0]]);
+
+    if not depth_val2
+    else
+        worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],virtical[0],depth_val2[0]]);
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
