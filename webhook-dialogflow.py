@@ -94,13 +94,13 @@ def processRequest(req):
     jst_now = utc_now.astimezone(timezone('Asia/Tokyo'))
 
     # シートに行を追加して記入
-    if not depth
+    if not depth[0]
         worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],virtical[0],depth_val[0]]);
         worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],virtical[0],depth_val1[0]]);
     else
         worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],horizontal[0],virtical[0],depth[0]]);
 
-    if not depth_val2
+    if not depth_val2[0]
     else
         worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],virtical[0],depth_val2[0]]);
 
