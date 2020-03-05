@@ -72,9 +72,9 @@ def processRequest(req):
     virtical = req.get("queryResult").get("parameters").get("virtical")
     horizontal = req.get("queryResult").get("parameters").get("horizontal")
     depth = req.get("queryResult").get("parameters").get("depth")
-    depth_val = req.get("queryResult").get("parameters").get("depth_val")
-    depth_val1 = req.get("queryResult").get("parameters").get("depth_val1")
-    depth_val2 = req.get("queryResult").get("parameters").get("depth_val2")
+    depth_val_1 = req.get("queryResult").get("parameters").get("depth_val_1")
+    depth_val_2 = req.get("queryResult").get("parameters").get("depth_val_2")
+    depth_val_3 = req.get("queryResult").get("parameters").get("depth_val_3")
 
     #デバッグ用にログ出力
     print(tooth_number)
