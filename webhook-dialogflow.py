@@ -81,8 +81,9 @@ def processRequest(req):
     print(virtical)
     print(horizontal)
     print(depth)
-    print(depth_val)
-    print(type(depth_val))
+    print(depth_val_1)
+    print(depth_val_2)
+    print(depth_val_3)
 
     #ダウンロードしたjsonファイルを同じフォルダに格納して指定する
     credentials = ServiceAccountCredentials.from_json_keyfile_dict(credential, scope)
@@ -96,17 +97,11 @@ def processRequest(req):
     jst_now = utc_now.astimezone(timezone('Asia/Tokyo'))
 
     # 3桁または2桁で入力される数値を桁ごとに分解
-    if depth_val is not None:
-        depth_length = len(depth_val)
-        depth_value_1 = int(depth_val[-1])
-        depth_value_2 = int(depth_val[-2])
-        depth_value_3 = int(depth_val[-3])
-
     # シートに行を追加して記入
     if depth is None:
-        worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number,"",virtical,depth_value_1]);
-        worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number,"",virtical,depth_value_2]);
-        worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number,"",virtical,depth_value_3]);
+        worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],"",virtical[0],depth_val_1[0]]);
+        worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],"",virtical[0],depth_val_2[0]]);
+        worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],"",virtical[0],depth_val_3[0]]);
 
     if depth is not None:
         worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],horizontal[0],virtical[0],depth[0]]);
