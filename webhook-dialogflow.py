@@ -99,9 +99,9 @@ def processRequest(req):
     # 3桁または2桁で入力される数値を桁ごとに分解
     # シートに行を追加して記入
     if depth is None:
-        worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number,"",virtical[0],depth_val_1[0]]);
-        worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number,"",virtical[0],depth_val_2[0]]);
-        worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number,"",virtical[0],depth_val_3[0]]);
+        worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number,"",virtical,depth_val_1[0]]);
+        worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number,"",virtical,depth_val_2[0]]);
+        worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number,"",virtical,depth_val_3[0]]);
 
     if depth is not None:
         worksheet.append_row([jst_now.strftime("%Y/%m/%d %H:%M:%S"),tooth_number[0],horizontal[0],virtical[0],depth[0]]);
