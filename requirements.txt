@@ -10,7 +10,7 @@ django-heroku==0.3.1
 Flask==1.0.2
 gunicorn>=19.8.1
 gspread==3.0.1
-httplib2==0.11.3
+httplib2==0.19.0
 idna==2.7
 itsdangerous==0.24
 Jinja2>=2.10.1
